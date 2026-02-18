@@ -1,0 +1,40 @@
+<header class="header">
+  <h1>Выбранный раздел: {{ selectedType.title }}</h1>
+  <div class="header_data_value">
+    <h1>Выбрано пунктов: {{ selectedCount() }}</h1>
+    <h1>Общее значение: {{ sumValues() }}</h1>
+  </div>
+</header>
+<main class="main_container">
+  <section class="section_menu">
+    <ul>
+      @for (type of menu; track type.id) {
+        <li
+          class="section_menu_title"
+          (click)="selectType(type)"
+          [class.active]="type === selectedType"
+        >
+          {{ type.title }}
+        </li>
+      }
+    </ul>
+  </section>
+  <section class="section_checkbox">
+    <ul>
+      @for (item of selectedType.items; track item.id) {
+        <div class="item_checkbox">
+          <input
+            class="checkbox"
+            type="checkbox"
+            [checked]="item.selected"
+            (change)="activeCheckbox(item)"
+          />
+          <div class="item_info">
+            <li class="section_checkbox_label">{{ item.label }}</li>
+            <p class="section_checkbox_value">value: {{ item.value }}</p>
+          </div>
+        </div>
+      }
+    </ul>
+  </section>
+</main>

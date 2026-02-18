@@ -1,0 +1,86 @@
+.header {
+  // margin: 40px 30px 0;
+  padding: 10px 60px;
+
+  display: flex;
+  justify-content: space-between;
+
+  border: 1px solid black;
+  border-bottom: none;
+
+  .header_data_value {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 80px;
+  }
+  h1 {
+    font-size: 20px;
+  }
+}
+
+.main_container {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+  grid-template-rows: 1fr 1fr;
+
+  li {
+    list-style: none;
+  }
+
+  .section_menu {
+    padding: 20px 0 0 30px;
+    border: 1px solid black;
+
+    .section_menu_title {
+      position: relative;
+      padding-bottom: 10px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 600;
+
+      padding-left: 15px;
+    }
+
+    .section_menu_title.active::before {
+      position: absolute;
+      top: 3px;
+      left: 0px;
+      content: '*';
+    }
+  }
+
+  .section_checkbox {
+    padding: 20px 0 0 20px;
+
+    border: 1px solid black;
+    border-left: none;
+
+    .item_checkbox {
+      display: flex;
+      align-items: flex-start;
+
+      .section_checkbox_label {
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      .section_checkbox_value {
+        margin-top: 7px;
+
+        font-size: 16px;
+        font-weight: 300;
+      }
+
+      .checkbox {
+        margin-right: 8px;
+        cursor: pointer;
+      }
+    }
+
+    .iten_info {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
